@@ -6,44 +6,42 @@
     <title>Quote</title>
 
     <style>
-        .widget {
-            padding: 5px 5px ;
-            color: #000000;
-            text-align: center;
+        .container {
             max-width: 95%;
             margin: auto;
-            font-variant-caps: petite-caps;
-            font-size: 2em;
+            padding: 10px;
+            border: 2px solid black;
+            text-align: center;
         }
 
         .title {
-            text-align: center;
             font-size: 1.5em;
             font-weight: bold;
+            font-style: italic;
+            color: brown;
             margin-bottom: 10px;
         }
 
-        div {
-            width: 95%;
-            min-height: 100px;
-            background:
-                linear-gradient(to right, black 4px, transparent 4px) 0 0,
-                linear-gradient(to right, black 4px, transparent 4px) 0 100%,
-                linear-gradient(to left, black 4px, transparent 4px) 100% 0,
-                linear-gradient(to left, black 4px, transparent 4px) 100% 100%,
-                linear-gradient(to bottom, black 4px, transparent 4px) 0 0,
-                linear-gradient(to bottom, black 4px, transparent 4px) 100% 0,
-                linear-gradient(to top, black 4px, transparent 4px) 0 100%,
-                linear-gradient(to top, black 4px, transparent 4px) 100% 100%;
-            background-repeat: no-repeat;
-            background-size: 20px 20px;
+        .divider {
+            border-top: 1px solid black;
+            margin: 10px 0;
+        }
+
+        .widget {
+            padding: 5px 5px;
+            color: #000000;
+            font-variant-caps: petite-caps;
+            font-size: 2em;
         }
     </style>
 </head>
 <body>
 
-    <div class="title">Quote of the day:</div>
-    <div class="widget" id="widget"></div>
+    <div class="container">
+        <div class="title">Quote of the day:</div>
+        <div class="divider"></div>
+        <div class="widget" id="widget"></div>
+    </div>
 
     <script>
         quotes = [
