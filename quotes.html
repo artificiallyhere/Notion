@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4eeee; /* White background for the whole page */
+        }
+
+        .container {
+            display: inline-block;
+            padding: 10px;
+            border: 2px solid black;
+            text-align: center;
+            margin: auto;
+            background-color: #f4eeee; /* Background color of the quote box */
+        }
+
+        .title {
+            font-size: 1.5em;
+            font-weight: bold;
+            font-style: italic;
+            color: #9f6b53; /* Text color for the title */
+            margin-bottom: 10px;
+        }
+
+        .divider {
+            border-top: 1px solid black;
+            margin: 10px 0;
+        }
+
+        .widget {
+            padding: 5px 5px;
+            color: #434040; /* Text color for the quotes */
+            font-variant-caps: petite-caps;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="title">Quote of the day:</div>
+        <div class="divider"></div>
+        <div class="widget" id="widget"></div>
+    </div>
+
+    <script>
+        quotes = [
+            "بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ",
+            "Now you will be more disappointed by the things that you didn't do than by the ones you did do. So throw off the bowlines. Sail away from the safe harbor. Catch the trade winds in your sails. Explore. Dream. Discover."
+        ];
+
+        const INTERVAL = 86400000;
+
+        function displayQuote() {
+            let i = 0;
+            document.getElementById('widget').innerHTML = quotes[i];
+            setInterval(() => {
+                i = (i + 1) % quotes.length;
+                document.getElementById('widget').innerHTML = quotes[i];
+            }, INTERVAL);
+        }
+
+        displayQuote();
+    </script>
+
+</body>
+</html>
